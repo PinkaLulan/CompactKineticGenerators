@@ -1,0 +1,17 @@
+[
+{
+  "modid": "compactkineticgenerators",
+  "name": "Compact Kinetic Wind and Water Generators",
+  "description": "Kinetic Wind and Water Generator compact version!",
+  "version": "",
+  "mcversion": "",
+  "logoFile": "",
+  "url": "https://www.youtube.com/user/lulan222/",
+  "updateUrl": "",
+  "authorList": ["PinkaLulan"],
+  "credits": "Thanks to Pahimar, diesieben07, Jabelar, coolAlias, Neale, cpw and all the tutorials on the web _(:3",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

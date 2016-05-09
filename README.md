@@ -1,2 +1,2 @@
-# CompactKineticWindmills
-IC2 addon - kinetic wind generator compact version
+# CompactKineticGenerators
+IC2 addon - kinetic wind and water generator compact version

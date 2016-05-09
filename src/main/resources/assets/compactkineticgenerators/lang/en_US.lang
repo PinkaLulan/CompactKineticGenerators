@@ -1,0 +1,15 @@
+# Creative Tab
+itemGroup.compactkineticgenerators=Compact Kinetic Windmills
+
+# Block
+tile.ckg:BlockCkwm.name=Low Kinetic Wind Generator
+tile.ckg:BlockCkwm1.name=Medium Kinetic Wind Generator
+tile.ckg:BlockCkwm2.name=High Kinetic Wind Generator
+tile.ckg:BlockCkwm3.name=Extreme Kinetic Wind Generator
+
+# Item
+item.compactkineticgenerators:IridiumRotor.name=Kinetic Gearbox Rotor (Iridium)
+item.compactkineticgenerators:IridiumBlade.name=Iridium Rotor Blade
+#item.ckg:windinfo=Requirements Min: %1$s MCW Max: %2$s MCW
+#item.ckg:fitsin.true=This rotor fits into this gearbox
+#item.ckg:fitsin.false=This rotor does not fit into this gearbox
