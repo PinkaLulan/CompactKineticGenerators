@@ -19,8 +19,9 @@ public class ConfigHandler
 	//GENERAL
 	public static boolean debugMode = false;
 	
-	public static Property propOutput, propDamage, propOutputWater, propDamageWater;
+	public static int customKGTier = 7;
 	
+	public static Property propOutput, propDamage, propOutputWater, propDamageWater;
 	public static double[] scaleOutput = new double[] {4D, 16D, 64D, 256D};
 	public static double[] scaleDamage = new double[] {4D, 16D, 64D, 256D};
 	public static double[] scaleOutputWater = new double[] {4D, 16D, 64D, 256D};
@@ -33,10 +34,11 @@ public class ConfigHandler
 
 		//是否開啟debug mode
 		debugMode = config.getBoolean("Debug Mode", "general", false, "Enable debug message (SPAM WARNING)");
-	
+		
+		customKGTier = config.getInt("ExtremeKG Tier", "general", 7, 7, 13, "Extreme Kinetic Generator energy tier, default 7 = max 131,072 EU/t");
+		
 		propOutput = config.get("general", "Wind Output Scale", scaleOutput, "output scale vs classic wind generator");
 		propDamage = config.get("general", "Wind Rotor Damage Scale", scaleOutput, "rotor damage scale vs classic wind generator");
-
 		scaleOutput = getDoubleArrayFromConfig(scaleOutput, propOutput);
 		scaleDamage = getDoubleArrayFromConfig(scaleDamage, propDamage);
 

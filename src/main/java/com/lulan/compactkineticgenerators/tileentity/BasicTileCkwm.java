@@ -76,9 +76,9 @@ abstract public class BasicTileCkwm extends TileEntityWindKineticGenerator {
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);	//從nbt讀取方塊的xyz座標
         
-//        type = nbt.getInteger("type");
-//        scaleOutput = nbt.getFloat("scale");
-//        scaleDamage = nbt.getFloat("damage");
+        type = nbt.getInteger("type");
+        scaleOutput = nbt.getFloat("scale");
+        scaleDamage = nbt.getFloat("damage");
     }
 	
 	//將資料寫進nbt
@@ -86,9 +86,9 @@ abstract public class BasicTileCkwm extends TileEntityWindKineticGenerator {
 	public void writeToNBT(NBTTagCompound nbt) {
 		super.writeToNBT(nbt);
 		
-//		nbt.setInteger("type", type);
-//		nbt.setFloat("scale", scaleOutput);
-//		nbt.setFloat("damage", scaleDamage);
+		nbt.setInteger("type", type);
+		nbt.setFloat("scale", scaleOutput);
+		nbt.setFloat("damage", scaleDamage);
 	}
 	
 	

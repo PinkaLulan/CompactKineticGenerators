@@ -1,15 +1,27 @@
 # Creative Tab
-itemGroup.compactkineticgenerators=Compact Kinetic Windmills
+itemGroup.compactkineticgenerators=Compact Kinetic Generators
 
 # Block
-tile.ckg:BlockCkwm.name=Low Kinetic Wind Generator
-tile.ckg:BlockCkwm1.name=Medium Kinetic Wind Generator
-tile.ckg:BlockCkwm2.name=High Kinetic Wind Generator
-tile.ckg:BlockCkwm3.name=Extreme Kinetic Wind Generator
+tile.ckg:BlockCkg.name=Low Kinetic Wind Generator
+tile.ckg:BlockCkg1.name=Medium Kinetic Wind Generator
+tile.ckg:BlockCkg2.name=High Kinetic Wind Generator
+tile.ckg:BlockCkg3.name=Extreme Kinetic Wind Generator
+tile.ckg:BlockCkg4.name=Low Kinetic Water Generator
+tile.ckg:BlockCkg5.name=Medium Kinetic Water Generator
+tile.ckg:BlockCkg6.name=High Kinetic Water Generator
+tile.ckg:BlockCkg7.name=Extreme Kinetic Water Generator
+tile.ckg:BlockCkg8.name=Low Kinetic Generator
+tile.ckg:BlockCkg9.name=Medium Kinetic Generator
+tile.ckg:BlockCkg10.name=High Kinetic Generator
+tile.ckg:BlockCkg11.name=Extreme Kinetic Generator
 
 # Item
 item.compactkineticgenerators:IridiumRotor.name=Kinetic Gearbox Rotor (Iridium)
 item.compactkineticgenerators:IridiumBlade.name=Iridium Rotor Blade
-#item.ckg:windinfo=Requirements Min: %1$s MCW Max: %2$s MCW
-#item.ckg:fitsin.true=This rotor fits into this gearbox
-#item.ckg:fitsin.false=This rotor does not fit into this gearbox
+
+# tooltip
+tooltip.ckg.power=Power Output: %s EU/t max
+tooltip.ckg.capacity0=Capacity: 1m EU
+tooltip.ckg.capacity1=Capacity: 4m EU
+tooltip.ckg.capacity2=Capacity: 10m EU
+tooltip.ckg.capacity3=Capacity: 40m EU 

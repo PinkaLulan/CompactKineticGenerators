@@ -24,7 +24,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import com.lulan.compactkineticgenerators.reference.Reference;
-import com.lulan.compactkineticgenerators.tileentity.BasicTileCkwm;
+import com.lulan.compactkineticgenerators.tileentity.BasicTileCkg;
+import com.lulan.compactkineticgenerators.tileentity.TileCkgE;
+import com.lulan.compactkineticgenerators.tileentity.TileCkgH;
+import com.lulan.compactkineticgenerators.tileentity.TileCkgL;
+import com.lulan.compactkineticgenerators.tileentity.TileCkgM;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmE;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmH;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmL;
@@ -34,25 +38,27 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 /**
- *  meta: 0:LV, 1:MV, 2:HV, 3:EV
- *
+ *  meta: 
+ *  0:Wind L, 1:Wind M, 2:Wind H, 3:Wind E
+ *  4:Water L, 5:Water M, 6:Water H, 7:Water E
+ *  8:KineticGenerator L, 9:KineticGenerator M, 10:KineticGenerator H, 11:KineticGenerator E
  */
-public class BlockCkwm extends BasicCkgContainer
+public class BlockCkg extends BasicCkgContainer
 {
 	//[face][side], iconID: 6:head, 7:tail, 8:side, 9:top, 10:btm  (0~5 save for vanilla icon method)
-	private static final int[][] face2iconID = {{6,  7,  8,  8,  8,  8},  //face btm(0)
+	public static final int[][] face2iconID = { {6,  7,  8,  8,  8,  8},  //face btm(0)
 												{7,  6,  8,  8,  8,  8},  //face top(1)
 												{10, 9,  6,  7,  8,  8},  //face N(2)
 												{10, 9,  7,  6,  8,  8},  //face S(3)
 												{10, 9,  8,  8,  6,  7},  //face W(4)
-												{10, 9,  8,  8,  7,  6}}; //face E(5)
-	IIcon[] icons = new IIcon[14];
+												{10, 9,  8,  8,  7,  6} };//face E(5)
+	IIcon[] icons = new IIcon[22];
 	
 	
-	public BlockCkwm()
+	public BlockCkg()
 	{
 		super(Material.iron);
-		this.setBlockName("BlockCkwm");
+		this.setBlockName("BlockCkg");
 		this.setStepSound(soundTypeMetal);
 	    this.setHardness(3F);
 	}
@@ -75,6 +81,14 @@ public class BlockCkwm extends BasicCkgContainer
 		icons[11] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwmES"));
 		icons[12] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwmT"));
 		icons[13] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwmB"));
+		icons[14] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwaL"));
+		icons[15] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwaM"));
+		icons[16] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwaH"));
+		icons[17] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkwaE"));
+		icons[18] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkgL"));
+		icons[19] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkgM"));
+		icons[20] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkgH"));
+		icons[21] = iconRegister.registerIcon(String.format(Reference.MOD_ID+":BlockCkgE"));
 	}
 	
 	//side: 0:bottom, 1:top, 2:N, 3:S, 4:W, 5:E
@@ -82,30 +96,104 @@ public class BlockCkwm extends BasicCkgContainer
 	@SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
 	{
-		switch (side)
+		try
 		{
-		case 0:  //default top
-			return icons[12];
-		case 1:  //default btm
-			return icons[13];
-		case 2:  //default tail
-			return icons[meta * 3 + 1];
-		case 3:  //default head
-			return icons[meta * 3];
-		case 4:  //default side
-			return icons[meta * 3 + 2];
-		case 5:  //default side
-			return icons[meta * 3 + 2];
-		case 6:  //head
-			return icons[meta * 3];
-		case 7:  //tail
-			return icons[meta * 3 + 1];
-		case 8:  //side
-			return icons[meta * 3 + 2];
-		case 9:  //top
-			return icons[12];
-		default: //btm
-			return icons[13];
+			//wind mills
+			if (meta <= 3)
+			{
+				switch (side)
+				{
+				case 0:  //default top
+					return icons[12];
+				case 1:  //default btm
+					return icons[13];
+				case 2:  //default tail
+					return icons[meta * 3 + 1];
+				case 3:  //default head
+					return icons[meta * 3];
+				case 4:  //default side
+					return icons[meta * 3 + 2];
+				case 5:  //default side
+					return icons[meta * 3 + 2];
+				case 6:  //head
+					return icons[meta * 3];
+				case 7:  //tail
+					return icons[meta * 3 + 1];
+				case 8:  //side
+					return icons[meta * 3 + 2];
+				case 9:  //top
+					return icons[12];
+				default: //btm
+					return icons[13];
+				}
+			}
+//			//water mills
+//			else if (meta <= 7)
+//			{
+//				meta -= 4;
+//				
+//				switch (side)
+//				{
+//				case 0:  //default top
+//					return icons[12];
+//				case 1:  //default btm
+//					return icons[13];
+//				case 2:  //default tail
+//					return icons[meta * 3 + 1];
+//				case 3:  //default head
+//					return icons[meta * 3];
+//				case 4:  //default side
+//					return icons[meta * 3 + 2];
+//				case 5:  //default side
+//					return icons[meta * 3 + 2];
+//				case 6:  //head
+//					return icons[meta + 14];
+//				case 7:  //tail
+//					return icons[meta * 3 + 1];
+//				case 8:  //side
+//					return icons[meta * 3 + 2];
+//				case 9:  //top
+//					return icons[12];
+//				default: //btm
+//					return icons[13];
+//				}
+//			}
+			//kinetic generators
+			else
+			{
+				meta -= 8;
+				
+				switch (side)
+				{
+				case 0:  //default top
+					return icons[12];
+				case 1:  //default btm
+					return icons[13];
+				case 2:  //default tail
+					return icons[meta * 3 + 1];
+				case 3:  //default head
+					return icons[meta * 3];
+				case 4:  //default side
+					return icons[meta * 3 + 2];
+				case 5:  //default side
+					return icons[meta * 3 + 2];
+				case 6:  //head
+					return icons[meta * 3];
+				case 7:  //tail
+					return icons[meta + 18];
+				case 8:  //side
+					return icons[meta * 3 + 2];
+				case 9:  //top
+					return icons[12];
+				default: //btm
+					return icons[13];
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return null;
 		}
     }
 	
@@ -114,9 +202,9 @@ public class BlockCkwm extends BasicCkgContainer
     {
 		TileEntity tile = block.getTileEntity(x, y, z);
 		
-		if (tile instanceof BasicTileCkwm)
+		if (tile instanceof IWrenchable)
 		{
-			return this.getIcon(face2iconID[((BasicTileCkwm) tile).getFacing()][side], block.getBlockMetadata(x, y, z));
+			return this.getIcon(face2iconID[((IWrenchable) tile).getFacing()][side], block.getBlockMetadata(x, y, z));
 		}
 		
 		return this.getIcon(face2iconID[2][side], 0);
@@ -127,12 +215,27 @@ public class BlockCkwm extends BasicCkgContainer
 	{
 		switch (meta)
 		{
+		//wind mills
 		case 1:
 			return new TileCkwmM();
 		case 2:
 			return new TileCkwmH();
 		case 3:
 			return new TileCkwmE();
+		//water mills
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		//kinetic generators
+		case 8:
+			return new TileCkgL();
+		case 9:
+			return new TileCkgM();
+		case 10:
+			return new TileCkgH();
+		case 11:
+			return new TileCkgE();
 		default:
 			return new TileCkwmL();
 		}
@@ -244,10 +347,21 @@ public class BlockCkwm extends BasicCkgContainer
 	@SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs ctab, List list)
     {
+		//wind mills
         list.add(new ItemStack(item, 1, 0));
         list.add(new ItemStack(item, 1, 1));
         list.add(new ItemStack(item, 1, 2));
         list.add(new ItemStack(item, 1, 3));
+        //wateer mills
+//        list.add(new ItemStack(item, 1, 4));
+//        list.add(new ItemStack(item, 1, 5));
+//        list.add(new ItemStack(item, 1, 6));
+//        list.add(new ItemStack(item, 1, 7));
+        //kinetic generators
+        list.add(new ItemStack(item, 1, 8));
+        list.add(new ItemStack(item, 1, 9));
+        list.add(new ItemStack(item, 1, 10));
+        list.add(new ItemStack(item, 1, 11));
     }
 	
 	//set facing when placed
@@ -262,7 +376,7 @@ public class BlockCkwm extends BasicCkgContainer
 	    	
 	    	//set meta value
 	    	int meta = itemStack.getItemDamage();
-	    	if (meta > 3) meta = 0;
+	    	if (meta > 11) meta = 0;
 	    	
 	    	world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 	    	
@@ -294,6 +408,20 @@ public class BlockCkwm extends BasicCkgContainer
 	    	}
 		}
 	}
+	
+	@Override
+	public void onBlockPreDestroy(World world, int x, int y, int z, int meta)
+	{
+		TileEntity tile = world.getTileEntity(x, y, z);
+		
+		//unload from e-net
+		if (tile instanceof BasicTileCkg) {
+			BasicTileCkg ckg = (BasicTileCkg)tile;
+			ckg.onBlockBreak(this, meta);
+			ckg.onUnloaded();
+		}
+	}
+	
 	
 
 }

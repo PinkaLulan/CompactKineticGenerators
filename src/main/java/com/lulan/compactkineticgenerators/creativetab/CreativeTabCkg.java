@@ -16,7 +16,7 @@ public class CreativeTabCkg
 		//tab的icon
 		@Override
 		public Item getTabIconItem() {
-			return new ItemStack(ModBlocks.BlockCkwm, 1, 3).getItem();
+			return new ItemStack(ModBlocks.BlockCkg, 1, 3).getItem();
 		}
 		
 		//tab顯示的名稱會自動找語系檔的字串填入  不必使用getTranslatedTabLabel

@@ -1,15 +1,20 @@
 # Creative Tab
-itemGroup.compactkineticgenerators=Compact Kinetic Windmills
+itemGroup.compactkineticgenerators=壓縮動能發電機
 
 # Block
-tile.ckg:BlockCkwm.name=低階風力動能產生器
-tile.ckg:BlockCkwm1.name=中階風力動能產生器
-tile.ckg:BlockCkwm2.name=高階風力動能產生器
-tile.ckg:BlockCkwm3.name=超高階風力動能產生器
+tile.ckg:BlockCkg.name=低階風力動能產生器
+tile.ckg:BlockCkg1.name=中階風力動能產生器
+tile.ckg:BlockCkg2.name=高階風力動能產生器
+tile.ckg:BlockCkg3.name=超高階風力動能產生器
+tile.ckg:BlockCkg4.name=低階水力動能產生器
+tile.ckg:BlockCkg5.name=中階水力動能產生器
+tile.ckg:BlockCkg6.name=高階水力動能產生器
+tile.ckg:BlockCkg7.name=超高階水力動能產生器
+tile.ckg:BlockCkg8.name=低階動能發電機
+tile.ckg:BlockCkg9.name=中階動能發電機
+tile.ckg:BlockCkg10.name=高階動能發電機
+tile.ckg:BlockCkg11.name=超高階動能發電機
 
 # Item
 item.compactkineticgenerators:IridiumRotor.name=銥轉子
 item.compactkineticgenerators:IridiumBlade.name=銥扇葉
-item.ckg:windinfo=風力最低需求: %1$s MCW 最高: %2$s MCW
-item.ckg:fitsin.true=該機器可使用此扇葉
-item.ckg:fitsin.false=該機器不可使用此扇葉
