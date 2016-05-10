@@ -38,9 +38,14 @@ public class ConfigHandler
 		customKGTier = config.getInt("ExtremeKG Tier", "general", 7, 7, 13, "Extreme Kinetic Generator energy tier, default 7 = max 131,072 EU/t");
 		
 		propOutput = config.get("general", "Wind Output Scale", scaleOutput, "output scale vs classic wind generator");
-		propDamage = config.get("general", "Wind Rotor Damage Scale", scaleOutput, "rotor damage scale vs classic wind generator");
+		propDamage = config.get("general", "Wind Rotor Damage Scale", scaleDamage, "rotor damage scale vs classic wind generator");
+		propOutputWater = config.get("general", "Water Output Scale", scaleOutputWater, "output scale vs classic water generator");
+		propDamageWater = config.get("general", "Water Rotor Damage Scale", scaleDamageWater, "rotor damage scale vs classic water generator");
+		
 		scaleOutput = getDoubleArrayFromConfig(scaleOutput, propOutput);
 		scaleDamage = getDoubleArrayFromConfig(scaleDamage, propDamage);
+		scaleOutputWater = getDoubleArrayFromConfig(scaleOutputWater, propOutputWater);
+		scaleDamageWater = getDoubleArrayFromConfig(scaleDamageWater, propDamageWater);
 
 		//若設定檔有更新過, 則儲存
 		if (config.hasChanged())

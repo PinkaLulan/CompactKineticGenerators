@@ -29,6 +29,7 @@ public class ModRecipes {
 		ItemStack iriBlade = new ItemStack(ModItems.IridiumBlade);
 		ItemStack iriRotor = new ItemStack(ModItems.IridiumRotor);
 		ItemStack kwm = IC2Items.getItem("WindKineticGenerator");
+		ItemStack kwa = IC2Items.getItem("WaterKineticGenerator");
 		ItemStack lvt = IC2Items.getItem("lvTransformer");
 		ItemStack mvt = IC2Items.getItem("mvTransformer");
 		ItemStack hvt = IC2Items.getItem("hvTransformer");
@@ -59,6 +60,12 @@ public class ModRecipes {
 		GameRegistry.addRecipe(new ShapedOreRecipe(mvwm," w ","wtw"," w ",'w',lvwm,'t',mvt));
 		GameRegistry.addRecipe(new ShapedOreRecipe(hvwm," w ","wtw"," w ",'w',mvwm,'t',hvt));
 		GameRegistry.addRecipe(new ShapedOreRecipe(evwm," w ","wtw"," w ",'w',hvwm,'t',evt));
+		
+		//water
+		GameRegistry.addRecipe(new ShapedOreRecipe(lvwa," w ","wtw"," w ",'w',kwa,'t',lvt));
+		GameRegistry.addRecipe(new ShapedOreRecipe(mvwa," w ","wtw"," w ",'w',lvwa,'t',mvt));
+		GameRegistry.addRecipe(new ShapedOreRecipe(hvwa," w ","wtw"," w ",'w',mvwa,'t',hvt));
+		GameRegistry.addRecipe(new ShapedOreRecipe(evwa," w ","wtw"," w ",'w',hvwa,'t',evt));
 		
 		//generator
 		GameRegistry.addRecipe(new ShapedOreRecipe(lvg,"ccc","gms","ccc",'c',refironCasing,'g',engCrystal,'m',kg,'s',refironShaft));

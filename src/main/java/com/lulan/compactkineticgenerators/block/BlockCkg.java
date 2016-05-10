@@ -29,6 +29,10 @@ import com.lulan.compactkineticgenerators.tileentity.TileCkgE;
 import com.lulan.compactkineticgenerators.tileentity.TileCkgH;
 import com.lulan.compactkineticgenerators.tileentity.TileCkgL;
 import com.lulan.compactkineticgenerators.tileentity.TileCkgM;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaE;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaH;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaL;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaM;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmE;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmH;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmL;
@@ -127,37 +131,37 @@ public class BlockCkg extends BasicCkgContainer
 					return icons[13];
 				}
 			}
-//			//water mills
-//			else if (meta <= 7)
-//			{
-//				meta -= 4;
-//				
-//				switch (side)
-//				{
-//				case 0:  //default top
-//					return icons[12];
-//				case 1:  //default btm
-//					return icons[13];
-//				case 2:  //default tail
-//					return icons[meta * 3 + 1];
-//				case 3:  //default head
-//					return icons[meta * 3];
-//				case 4:  //default side
-//					return icons[meta * 3 + 2];
-//				case 5:  //default side
-//					return icons[meta * 3 + 2];
-//				case 6:  //head
-//					return icons[meta + 14];
-//				case 7:  //tail
-//					return icons[meta * 3 + 1];
-//				case 8:  //side
-//					return icons[meta * 3 + 2];
-//				case 9:  //top
-//					return icons[12];
-//				default: //btm
-//					return icons[13];
-//				}
-//			}
+			//water mills
+			else if (meta <= 7)
+			{
+				meta -= 4;
+				
+				switch (side)
+				{
+				case 0:  //default top
+					return icons[12];
+				case 1:  //default btm
+					return icons[13];
+				case 2:  //default tail
+					return icons[meta * 3 + 1];
+				case 3:  //default head
+					return icons[meta * 3];
+				case 4:  //default side
+					return icons[meta * 3 + 2];
+				case 5:  //default side
+					return icons[meta * 3 + 2];
+				case 6:  //head
+					return icons[meta + 14];
+				case 7:  //tail
+					return icons[meta * 3 + 1];
+				case 8:  //side
+					return icons[meta * 3 + 2];
+				case 9:  //top
+					return icons[12];
+				default: //btm
+					return icons[13];
+				}
+			}
 			//kinetic generators
 			else
 			{
@@ -224,9 +228,13 @@ public class BlockCkg extends BasicCkgContainer
 			return new TileCkwmE();
 		//water mills
 		case 4:
+			return new TileCkwaL();
 		case 5:
+			return new TileCkwaM();
 		case 6:
+			return new TileCkwaH();
 		case 7:
+			return new TileCkwaE();
 		//kinetic generators
 		case 8:
 			return new TileCkgL();
@@ -247,22 +255,6 @@ public class BlockCkg extends BasicCkgContainer
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ)
 	{
-//		if (world.isRemote)
-//		{	//client端只需要收到true
-//    		return true;
-//    	}
-//		else if (!player.isSneaking())
-//		{	//server端: 按住shift不能點開方塊gui
-//			TileEntity tile = world.getTileEntity(x, y, z);
-//    		
-//    		if (tile != null) {	//開啟方塊GUI 參數:玩家,mod instance,gui ID,world,座標xyz
-//    			FMLNetworkHandler.openGui(player, CompactKineticWindmills.instance, ID.G.WINDMILL, world, x, y, z);
-//    		}
-//
-//    		return true;
-//    	}
-//    	return false;
-		
 		//client side
 		if (world.isRemote)
 		{
@@ -353,10 +345,10 @@ public class BlockCkg extends BasicCkgContainer
         list.add(new ItemStack(item, 1, 2));
         list.add(new ItemStack(item, 1, 3));
         //wateer mills
-//        list.add(new ItemStack(item, 1, 4));
-//        list.add(new ItemStack(item, 1, 5));
-//        list.add(new ItemStack(item, 1, 6));
-//        list.add(new ItemStack(item, 1, 7));
+        list.add(new ItemStack(item, 1, 4));
+        list.add(new ItemStack(item, 1, 5));
+        list.add(new ItemStack(item, 1, 6));
+        list.add(new ItemStack(item, 1, 7));
         //kinetic generators
         list.add(new ItemStack(item, 1, 8));
         list.add(new ItemStack(item, 1, 9));

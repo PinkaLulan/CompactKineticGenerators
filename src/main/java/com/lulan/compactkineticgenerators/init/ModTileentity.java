@@ -4,6 +4,10 @@ import com.lulan.compactkineticgenerators.tileentity.TileCkgE;
 import com.lulan.compactkineticgenerators.tileentity.TileCkgH;
 import com.lulan.compactkineticgenerators.tileentity.TileCkgL;
 import com.lulan.compactkineticgenerators.tileentity.TileCkgM;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaE;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaH;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaL;
+import com.lulan.compactkineticgenerators.tileentity.TileCkwaM;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmE;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmH;
 import com.lulan.compactkineticgenerators.tileentity.TileCkwmL;
@@ -20,10 +24,10 @@ public class ModTileentity {
 		GameRegistry.registerTileEntity(TileCkwmH.class, "TileEntityCkwmH");
 		GameRegistry.registerTileEntity(TileCkwmE.class, "TileEntityCkwmE");
 		//water mills
-//		GameRegistry.registerTileEntity(TileCkwaL.class, "TileEntityCkwaL");
-//		GameRegistry.registerTileEntity(TileCkwaM.class, "TileEntityCkwaM");
-//		GameRegistry.registerTileEntity(TileCkwaH.class, "TileEntityCkwaH");
-//		GameRegistry.registerTileEntity(TileCkwaE.class, "TileEntityCkwaE");
+		GameRegistry.registerTileEntity(TileCkwaL.class, "TileEntityCkwaL");
+		GameRegistry.registerTileEntity(TileCkwaM.class, "TileEntityCkwaM");
+		GameRegistry.registerTileEntity(TileCkwaH.class, "TileEntityCkwaH");
+		GameRegistry.registerTileEntity(TileCkwaE.class, "TileEntityCkwaE");
 		//wind mills
 		GameRegistry.registerTileEntity(TileCkgL.class, "TileEntityCkgL");
 		GameRegistry.registerTileEntity(TileCkgM.class, "TileEntityCkgM");

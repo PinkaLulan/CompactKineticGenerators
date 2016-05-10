@@ -18,3 +18,11 @@ tile.ckg:BlockCkg11.name=超高階動能發電機
 # Item
 item.compactkineticgenerators:IridiumRotor.name=銥轉子
 item.compactkineticgenerators:IridiumBlade.name=銥扇葉
+
+# tooltip
+tooltip.ckg.eu=輸出: 0-%s EU/t
+tooltip.ckg.ku=輸出: 0-%s倍 KU/t
+tooltip.ckg.capacity0=容量: 1m EU
+tooltip.ckg.capacity1=容量: 4m EU
+tooltip.ckg.capacity2=容量: 10m EU
+tooltip.ckg.capacity3=容量: 40m EU
