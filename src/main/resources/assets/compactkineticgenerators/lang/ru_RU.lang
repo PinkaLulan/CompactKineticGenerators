@@ -1,0 +1,28 @@
+# Creative Tab
+itemGroup.compactkineticgenerators=Compact Kinetic Generators
+
+# Block
+tile.ckg:BlockCkg.name=Кинетический ветрогенератор малой мощности
+tile.ckg:BlockCkg1.name=Кинетический ветрогенератор средней мощности
+tile.ckg:BlockCkg2.name=Кинетический ветрогенератор большой мощности
+tile.ckg:BlockCkg3.name=Кинетический ветрогенератор сверхбольшой мощности
+tile.ckg:BlockCkg4.name=Кинетический гидрогенератор малой мощности
+tile.ckg:BlockCkg5.name=Кинетический гидрогенератор средней мощности
+tile.ckg:BlockCkg6.name=Кинетический гидрогенератор большой мощности
+tile.ckg:BlockCkg7.name=Кинетический гидрогенератор сверхбольшой мощности
+tile.ckg:BlockCkg8.name=Кинетический генератор малой мощности
+tile.ckg:BlockCkg9.name=Кинетический генератор средней мощности
+tile.ckg:BlockCkg10.name=Кинетический генератор большой мощности
+tile.ckg:BlockCkg11.name=Кинетический генератор сверхбольшой мощности
+
+# Item
+item.compactkineticgenerators:IridiumRotor.name=Иридиевая крыльчатка
+item.compactkineticgenerators:IridiumBlade.name=Иридиевая лопасть
+
+# tooltip
+tooltip.ckg.eu=Выходная мощность: 0-%s EU/t макс.
+tooltip.ckg.ku=Выходная мощность: 0-%sx KU/t макс.
+tooltip.ckg.capacity0=Ёмкость: 1m EU
+tooltip.ckg.capacity1=Ёмкость: 4m EU
+tooltip.ckg.capacity2=Ёмкость: 10m EU
+tooltip.ckg.capacity3=Ёмкость: 40m EU 
